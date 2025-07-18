@@ -97,12 +97,15 @@ section h2 {
     margin-bottom: 12px;
 }
 
+/* 画像のサイズ調整＆中央寄せ */
 section img {
     width: 100%;
+    max-width: 400px; /* 最大幅を400pxに制限 */
     height: auto;
     border-radius: 12px;
-    margin-bottom: 12px;
+    margin: 0 auto 12px; /* 中央寄せ＆下マージン */
     object-fit: cover;
+    display: block;
 }
 
 section p {
@@ -153,5 +156,12 @@ footer {
 
     section iframe {
         height: 200px;
+    }
+}
+
+/* モバイル端末向けに画像を幅いっぱいに */
+@media (max-width: 480px) {
+    section img {
+        max-width: 100%;
     }
 }
