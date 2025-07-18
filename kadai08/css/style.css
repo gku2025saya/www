@@ -1,0 +1,157 @@
+/* === Google Fonts（ふんわり系） === */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+/* === リセット === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* === 全体設定 === */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.8;
+    background-color: #fff7f0;
+    color: #444;
+}
+
+/* === ヘッダー === */
+header {
+    background-color: #ffb6c1; /* くすみピンク */
+    color: white;
+    padding: 30px 0 20px;
+    text-align: center;
+    border-bottom: 4px solid #f199ad;
+}
+
+header h1 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+/* === ナビゲーション === */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    background-color: #f199ad;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #fff;
+    color: #f199ad;
+    border: 1px solid #f199ad;
+}
+
+/* === トップ画像 === */
+.main-photo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    margin: 20px auto;
+}
+
+/* === グリッド（共通カード表示） === */
+main.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    padding: 40px 5%;
+    text-align: left;
+}
+
+/* === カードセクション === */
+section {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 6px 15px rgba(255, 192, 203, 0.25);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(255, 182, 193, 0.3);
+}
+
+section h2 {
+    color: #d94c8a;
+    font-size: 1.5em;
+    margin-bottom: 12px;
+}
+
+section img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    object-fit: cover;
+}
+
+section p {
+    margin-bottom: 15px;
+    font-size: 1em;
+}
+
+section iframe {
+    width: 100%;
+    height: 250px;
+    border: 0;
+    border-radius: 12px;
+}
+
+/* === 宿泊ページ用セクション（オプション） === */
+section.hotel {
+    margin: 20px 5%;
+}
+
+/* === フッター === */
+footer {
+    background-color: #ffb6c1;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+/* === モバイル対応 === */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: 1.6em;
+    }
+
+    main.grid {
+        padding: 30px 5%;
+    }
+
+    section {
+        padding: 18px;
+    }
+
+    section iframe {
+        height: 200px;
+    }
+}
