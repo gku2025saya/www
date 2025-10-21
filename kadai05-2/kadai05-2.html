@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>配列の利用</title>
+<style>
+   body{
+     font-family: "Yu Gothic","Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+     padding: 24px;
+     background: #fff;
+   }
+   h1{
+     font-size: 20px;
+     margin-bottom: 16px;
+   }
+   table{
+     border-collapse: collapse;
+     width: 420px;
+   }
+   th, td{
+     border: 1px solid #bdbdbd;
+     padding: 8px 12px;
+     text-align: center;
+   }
+   th{
+     background:#f4f4f4;
+   }
+   .no{
+     background: #f6b26b;
+     font-weight: bold;
+     width: 48px;
+   }
+   .price{
+     text-align: right;
+     width: 110px;
+   }
+   .people{
+     width: 70px;
+   }
+   .btn{
+     padding: 6px 10px;
+     border-radius: 4px;
+     border: 1px solid #999;
+     background: #fff;
+     cursor: pointer;
+   }
+   .btn:hover{ box-shadow: 0 0 3px rgba(0,0,0,0.12); }
+</style>
+</head>
+<body>
+<h1>配列の利用</h1>
+<table>
+<thead>
+<tr>
+<th class="no">No.</th>
+<th>料金(a)</th>
+<th>人数(b)</th>
+<th>a×b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="no">0</td>
+<td class="price" id="price0">500</td>
+<td class="people" id="people0">10</td>
+<td><button class="btn" onclick="multiply_0()">利用料の合計</button></td>
+</tr>
+<tr>
+<td class="no">1</td>
+<td class="price" id="price1">980</td>
+<td class="people" id="people1">16</td>
+<td><button class="btn" onclick="multiply_1()">利用料の合計</button></td>
+</tr>
+<tr>
+<td class="no">2</td>
+<td class="price" id="price2">1200</td>
+<td class="people" id="people2">8</td>
+<td><button class="btn" onclick="multiply_2()">利用料の合計</button></td>
+</tr>
+</tbody>
+</table>
+<script>
+   const a = [500, 980, 1200];
+   const b = [10, 16, 8];
+   var anser;
+   function multiply_0(){
+     anser = a[0] * b[0];
+     alert("料金は" + anser + "円です");
+   }
+   function multiply_1(){
+     anser = a[1] * b[1];
+     alert("料金は" + anser + "円です");
+   }
+   function multiply_2(){
+     anser = a[2] * b[2];
+     alert("料金は" + anser + "円です");
+   }
+   function populateTableFromArrays(){
+     for(let i=0;i<a.length;i++){
+       const p = document.getElementById("price"+i);
+       const q = document.getElementById("people"+i);
+       if(p) p.textContent = a[i];
+       if(q) q.textContent = b[i];
+     }
+   })();
+</script>
+</body>
+</html>
