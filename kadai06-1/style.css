@@ -1,0 +1,59 @@
+:root{
+    --accent:#f4b183;
+    --border:#bdbdbd;
+    --bg:#fffaf6;
+    --table-bg:#fff;
+}
+*{box-sizing:border-box}
+body{
+    font-family: system-ui, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    background: var(--bg);
+    margin:0;
+    padding:24px;
+    color:#222;
+}
+.container{
+    max-width:760px;
+    margin:0 auto;
+}
+h1{
+    margin:0 0 18px 0;
+    font-size:28px;
+}
+.fee-table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--table-bg);
+    box-shadow:0 2px 6px rgba(0,0,0,0.06);
+}
+.fee-table thead th{
+    text-align:left;
+    padding:12px;
+    background:var(--accent);
+    border:1px solid var(--border);
+    font-weight:700;
+}
+.fee-table tbody td{
+    padding:10px;
+    border:1px solid var(--border);
+    vertical-align:middle;
+}
+.fee-table tbody tr:nth-child(odd) td{
+    background:#fff7ef;
+}
+.fee-table button{
+    padding:8px 10px;
+    border:1px solid #999;
+    background:#fff;
+    border-radius:4px;
+    cursor:pointer;
+    font-weight:600;
+}
+.fee-table button:hover{
+    transform:translateY(-1px);
+}
+.note{
+    margin-top:12px;
+    color:#555;
+    font-size:14px;
+}

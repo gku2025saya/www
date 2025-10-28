@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>配列の利用</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>料金(a)</th>
+                    <th>人数(b)</th>
+                    <th>a×b</th>
+                </tr>
+            </thead>
+            <tbody id="feeTable"></tbody>
+        </table>
+        <script>
+        const a = [500, 980, 1200];
+        const b = [10, 16, 8];
+        const tbody = document.getElementById("feeTable");
+        for (let i = 0; i < a.length; i++) {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+            <td>${i}</td>
+            <td>${a[i]}</td>
+            <td>${b[i]}</td>
+            <td><button onclick="multiply(${i})">利用料の合計</button></td>
+            `;
+            tbody.appendChild(row);
+        }
+        function multiply(index){
+            const result = a[index] * b[index];
+            alert("料金は" + result + "円です");
+            }
+            </script>
+            </body>
+            </html>
