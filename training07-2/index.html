@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>写真の一覧</title>
+</head>
+<body>
+<h1>写真の一覧</h1>
+<p>以下のボタンをクリックすると、写真が一覧表示されます。</p>
+<button id="showBtn" onclick="showPhotos()">写真を表示</button>
+<div id="gallery"></div>
+<script>
+    function showPhotos() {
+      var html =
+        '<img src="photo_1.jpg" alt="写真1" width="300">' +
+        '<img src="photo_2.jpg" alt="写真2" width="300">' +
+        '<img src="photo_3.jpg" alt="写真3" width="300">' +
+        '<img src="photo_4.jpg" alt="写真4" width="300">' +
+        '<img src="photo_5.jpg" alt="写真5" width="300">' +
+        '<img src="photo_6.jpg" alt="写真6" width="300">' +
+        '<img src="photo_7.jpg" alt="写真7" width="300">' +
+        '<img src="photo_8.jpg" alt="写真8" width="300">';
+      document.getElementById("gallery").innerHTML = html;
+      document.getElementById("showBtn").style.display = "none";
+    }
+</script>
+</body>
+</html>
+ 
