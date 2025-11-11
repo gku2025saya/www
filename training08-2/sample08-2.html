@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>繰り返し処理</title>
+    </head>
+    <body>
+        <h1 id="title">入場料の一覧</h1>
+        <table id="priceTable"></table>
+        <script>
+        const priceData = {
+           categories: ['大人', '高校生', '中学生', '小学生'],
+           basePrice: [800, 680, 450, 380],
+           rows: [1, 2, 3, 4, 5]
+        };
+        function applyStyles() {
+            document.body.style.fontFamily = "'Hiragino Sans', 'Yu Gothic', sans-serif";
+            document.body.style.padding = '20px';
+            document.body.style.backgroundColor = '#f5f5f5';
+            const title = document.getElementById('title');
+            title.style.fontSize = '2em';
+            title.style.marginBottom = '20px';
+            const table = document.getElementById('priceTable');
+            table.style.borderCollapse = 'collapse';
+            table.style.backgroundColor = 'white';
+            table.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+        }
+        function createPriceTable(data) {
+            const table = document.getElementById('priceTable');
+            const headerRow = document.createElement('tr');
+            const emptyHeader = document.createElement('th');
+            emptyHeader.style.border = '2px solid #333';
+            emptyHeader.style.padding = '15px 25px';
+            emptyHeader.style.textAlign = 'center';
+            emptyHeader.style.backgroundColor = '#a8d5d8';
+            emptyHeader.style.fontWeight = 'bold';
+            headerRow.appendChild(emptyHeader);
+            data.categories.forEach(category => {
+                const th = document.createElement('th');
+                th.textContent = category;
+                th.style.border = '2px solid #333';
+                th.style.padding = '15px 25px';
+                th.style.textAlign = 'center';
+                th.style.backgroundColor = '#a8d5d8';
+                th.style.fontWeight = 'bold';
+                headerRow.appendChild(th);
+            });
+            table.appendChild(headerRow);
+            data.rows.forEach(numPeople => {
+                const row = document.createElement('tr');
+                const numCell = document.createElement('td');
+                numCell.textContent = `${numPeople}人`;
+                numCell.style.border = '2px solid #333';
+                numCell.style.padding = '15px 25px';
+                numCell.style.textAlign = 'center';
+                numCell.style.backgroundColor = '#a8d5d8';
+                numCell.style.fontWeight = 'bold';
+                row.appendChild(numCell);
+                data.basePrice.forEach(price => {
+                    const priceCell = document.createElement('td');
+                    priceCell.textContent = `${price * numPeople}円`;
+                    priceCell.style.border = '2px solid #333';
+                    priceCell.style.padding = '15px 25px';
+                    priceCell.style.textAlign = 'center';
+                    row.appendChild(priceCell);
+                });
+                table.appendChild(row);
+            });
+        }
+        applyStyles();
+        createPriceTable(priceData);
+</script>
+</body>
+</html>
