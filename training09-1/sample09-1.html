@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <title>Click Counter</title>
+</head>
+<body>
+    <h1>Click Counter ★ for構文</h1>
+    <div id="counter">クリック回数 <span id="count">0</span> 回</div>
+    <button id="btn">クリック</button>
+    <h2>結果</h2>
+    <div id="result">ここに結果が表示されます</div>
+    <script>
+    let count = 0;
+    const countEl = document.getElementById('count');
+    const resultEl = document.getElementById('result');
+    const btn = document.getElementById('btn');
+    btn.addEventListener('click', function () {
+      count++;
+      countEl.textContent = count;
+      if (count === 1) {
+        let out = '';
+        for (let i = 0; i < 1; i++) {
+          out += '★';
+        }
+        resultEl.textContent = out;
+      } else if (count === 2) {
+        let out = '';
+        for (let i = 0; i < 5; i++) {
+          out += '★';
+        }
+        resultEl.textContent = out;
+      } else if (count === 3) {
+        const nums = [];
+        for (let i = 1; i <= 5; i++) {
+          nums.push(i);
+        }
+        resultEl.textContent = nums.join(' ');
+      } else if (count === 4) {
+        const evens = [];
+        for (let i = 2; i <= 10; i += 2) {
+          evens.push(i);
+        }
+        resultEl.textContent = evens.join(',');
+      } else if (count === 5) {
+        let sum = 0;
+        for (let i = 1; i <= count; i++) {
+          sum += i;
+        }
+        resultEl.textContent = `1〜${count}までの合計： ${sum}`;
+      } else if (count === 6) {
+        resultEl.textContent = 'クリアしました。カウントを0に戻します。';
+        count = 0;
+        countEl.textContent = count;
+      }
+});
+</script>
+</body>
+</html>
+ 

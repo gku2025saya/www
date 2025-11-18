@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <title>Click Counter switch版</title>
+    </head>
+    <body>
+        <h1>Click Counter ★ switch構文</h1>
+        <div id="counter">クリック回数 <span id="count">0</span> 回</div>
+        <button id="btn">クリック</button>
+        <h2>結果</h2>
+        <div id="result">ここに結果が表示されます</div>
+        <script>
+            let count = 0;
+   const countEl = document.getElementById('count');
+   const resultEl = document.getElementById('result');
+   const btn = document.getElementById('btn');
+   btn.addEventListener('click', function () {
+     count++;
+     countEl.textContent = count;
+     switch (count) {
+       case 1:
+         resultEl.textContent = "★";
+         break;
+       case 2:
+         resultEl.textContent = "★★★★★";
+         break;
+       case 3:
+         resultEl.textContent = "1 2 3 4 5";
+         break;
+       case 4:
+         resultEl.textContent = "2,4,6,8,10";
+         break;
+       case 5:
+         resultEl.textContent = 15;
+         break;
+       case 6:
+         resultEl.textContent = "クリアしました。カウントを0に戻します。";
+         count = 0;
+         countEl.textContent = count;
+         break;
+     }
+   });
+   </script>
+   </body>
+   </html>
